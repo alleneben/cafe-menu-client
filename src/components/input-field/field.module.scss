@@ -1,0 +1,65 @@
+.formitem {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    label {
+        color: black;
+        font-weight: 300;
+        margin-right: 50px;
+        font-size: 12px;
+    }
+    input,select,textarea {        
+        box-sizing: border-box;
+        padding: 5px;
+        border-radius: 3px;
+        border: none;
+        background: #fff;
+        color: gray;
+        margin: 5px 0 5px 0;
+        width: 100%;
+    }
+
+    input:focus, select:focus, textarea:focus {
+        box-sizing: border-box;
+        border: 1px solid #c9c9cb;
+        outline: 0;
+    }
+    ::placeholder {
+        color: gray;
+        font-weight: 600;
+        line-height: 20px;
+        font-size: 15px;
+    }
+
+}
+.select {
+    pointer-events:none;
+    position: absolute; 
+    right: 0;
+    display: flex;
+    align-items: center;
+    padding: 0 2px;
+    color: #4a5568;
+}
+
+.custom-file-input::-webkit-file-upload-button {
+    visibility: hidden;
+}
+.custom-file-input::before {
+    content: 'Select some files';
+    // display: inline-block;
+    background: #3b86ff;
+    color: #fff;
+    border-radius: 3px;
+    padding: 5px 10px;
+    outline: none;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    cursor: pointer;
+}
+.custom-file-input:hover::before {
+    border-color: black;
+}
+.custom-file-input:active::before {
+    background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+}

@@ -1,0 +1,16 @@
+.nav{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    box-shadow: 0 1px 0px 0 rgba(0, 0, 0, 0.1), 0 0px 0px 0 rgba(0, 0, 0, 0.06);
+    margin: 0 0 20px 0;
+    font-weight: 800;
+    flex: 0 1 auto;
+    padding: 10px 0;
+    background-color: #fff;
+}
+.brand {
+    margin: 5px 10px;
+    font-size: 12px;
+    letter-spacing: 2px;
+}
