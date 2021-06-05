@@ -17,7 +17,6 @@ const MenuPage = () => {
 
         let response = await fetch('http://localhost:8000/api/v1/menuitems')
         response = await response.json()
-        console.log(response);
         setMenuItems(response.data)
     }
 
@@ -26,8 +25,22 @@ const MenuPage = () => {
         history.push(path)
     }
 
+    const onEdit = (data) => {
+        history.push(`/edit/${data.id}`)
+    }
+
+    const onDelete = async (data) => {
+        let postdata = {
+            method: 'delete'
+        }
+        let response = await fetch(`http://localhost:8000/api/v1/menuitems/${data.id}`,postdata)
+        response = await response.json()
+        fetchItems()
+        
+    }
+
     const createMenu = () => {
-        return menuItems.map((data, key) => <Card key={key} data={data}/>)
+        return menuItems.map((data, key) => <Card key={key} data={data} onEdit={() => onEdit(data)} onDelete={() => onDelete(data)}/>)
     }
     return(
 
