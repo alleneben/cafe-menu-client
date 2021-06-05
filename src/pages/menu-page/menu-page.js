@@ -26,7 +26,8 @@ const MenuPage = () => {
     }
 
     const onEdit = (data) => {
-        history.push(`/edit/${data.id}`)
+        history.push(`/edit/${data.id}`,data)
+        history.push({pathname: `/edit/${data.id}`,state: data })
     }
 
     const onDelete = async (data) => {
@@ -35,8 +36,7 @@ const MenuPage = () => {
         }
         let response = await fetch(`http://localhost:8000/api/v1/menuitems/${data.id}`,postdata)
         response = await response.json()
-        fetchItems()
-        
+        fetchItems() 
     }
 
     const createMenu = () => {
