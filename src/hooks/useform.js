@@ -36,7 +36,7 @@ const useForm = (initialstate, validate, submitdata) => {
                 setsubmitting(false)
             }   
         }
-    },[submitting,errors,opacity])
+    },[submitting,errors,opacity, values, submitdata])
 
     const onChange = e => setvalues({...values, [e.target.name]: e.target.value})
 
