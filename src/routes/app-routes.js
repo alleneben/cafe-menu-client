@@ -1,5 +1,5 @@
 import { Switch, Route } from 'react-router-dom';
-import { AddMenuPage, MenuPage } from '../pages';
+import { AddMenuPage, MenuPage, EditMenuPage } from '../pages';
 
 
 
@@ -14,6 +14,7 @@ const AppRoutes = () => {
         <Switch>
             <Route exact path="/"  component={MenuPage}/>
             <Route exact path="/add"  component={AddMenuPage}/>
+            <Route exact path="/edit/:id"  component={EditMenuPage}/>
         </Switch>
     )
 }
